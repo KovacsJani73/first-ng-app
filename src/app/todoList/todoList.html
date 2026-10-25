@@ -1,0 +1,14 @@
+<h3>Todo listám</h3>
+
+<form>
+    <label>Filter todos:</label>
+    <input name="searchTerm" [(ngModel)]="searchTerm" placeholder="Serch for todos..." type="text">
+</form>
+
+<ul class="todo-list">
+    @for (todo of todoItems() | filterTodos : searchTerm(); track todo.id) {
+    <app-todo-item (itemToggled)="updateTodoItem(todo)" [item]="todo" />
+    } @empty {
+    <li>Loading...</li>
+    }
+</ul>

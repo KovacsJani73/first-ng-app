@@ -9,10 +9,10 @@ export const routes: Routes = [
         },
     },
     {
-        path: 'todos',
+        path: 'todoList',
         pathMatch: 'full',
         loadComponent: () => {
-            return import('./todos/todos').then((m) => m.Todos)
+            return import('./todoList/todoList').then((m) => m.TodoList)
         },
     }
 ];
